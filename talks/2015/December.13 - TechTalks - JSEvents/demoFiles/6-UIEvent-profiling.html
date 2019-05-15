@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<style>
+			body, div {padding: 20px 10px; margin: 20px 0;}
+		</style>
+    </head>
+    <body>
+        BODY
+
+        <script src="events.js"></script>
+		<script>
+		var htmlRef = document.body;
+		
+		UIEvent({
+			 name:      'My event - 1',
+			 htmlRef:   htmlRef,
+			 handler:   function(){console.log('I am: ' + this.eventConfig.name);},
+			 type: 		'click'
+		});
+
+		UIEvent({
+			 name:      'My event - 2',
+			 htmlRef:   htmlRef,
+			 handler:   function(){console.log('I am: ' + this.eventConfig.name);},
+			 type: 		'click'
+		});
+		UIEvent({
+			 name:      'My event - 3',
+			 htmlRef:   htmlRef,
+			 handler:   function(){console.log('I am: ' + this.eventConfig.name);},
+			 type: 		'click'
+		});
+		UIEvent({
+			 name:      'My event - 4',
+			 htmlRef:   htmlRef,
+			 handler:   function(){console.log('I am: ' + this.eventConfig.name);},
+			 type: 		'click'
+		});
+
+		</script>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		
+
+		<script>
+		
+		
+		
+			function rec(params){
+				
+				console.log('wut, no stack overflow?');
+				
+				setTimeout(rec.bind(null, params), 0);
+				
+			}
+		
+
+
+		</script>		
+	</body>
+</html>

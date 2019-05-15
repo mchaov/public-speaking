@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			ul {
+				width: 400px;
+			}
+			li {
+				margin: 1px;
+				padding: 10px;
+				cursor: pointer;
+				border: 1px solid #cecece;
+			}
+			.x {
+				background: #cef0f0;
+			}
+			.y {
+				background: #f0cef0;
+			}
+			.z {
+				background: #f0f0ce;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li id="addEventListener"> addEventListener </li>
+			<li id="onClickAttr" onclick="handler()"> onClick - attribute </li>
+			<li id="onClickPropRef"> onClick - property - reference </li>
+			<li id="onClickPropLambda"> onClick - property - lambda </li>
+		</ul>
+
+		<script>
+			function handler(e){
+				console.log(this);
+			}
+			
+			
+			var listener = document.getElementById("addEventListener");
+			listener.addEventListener('click', handler);
+			
+			var onClickPropLambda = document.getElementById("onClickPropLambda");
+			onClickPropLambda.onclick = function(e){
+				console.log(this);
+			}
+			
+			var onClickPropRef = document.getElementById("onClickPropRef");
+			onClickPropRef.onclick = handler;
+			
+			
+		</script>		
+	</body>
+</html>

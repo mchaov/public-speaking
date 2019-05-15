@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<script>
+			"use strict";
+
+			function insertHTML(parent, html) {
+				return parent.innerHTML = html;
+			}
+
+			function wrapInTag(tag, str) {
+				return '<' + tag + '>' + str + '</' + tag + '>';
+			}
+			
+			function sortASCNumbers(prop, a, b) {
+				return a[prop] - b[prop];
+			};
+			
+			function sortDESCNumbers(prop, a, b) {
+				return b[prop] - a[prop];
+			};
+			
+			function sortASCText(prop, a, b) {
+				return a[prop].localeCompare(b[prop]);
+			};
+			
+			function sortDESCText(prop, a, b) {
+				return b[prop].localeCompare(a[prop]);
+			};
+
+			function getData(url, callback) {
+				var oReq = new XMLHttpRequest();
+				oReq.addEventListener("load", callback);
+				oReq.open("GET", url);
+				oReq.send();
+			}
+
+			function getJSONKeys(arr) {
+				var a = [], i, j;
+				
+				for ( i = 0; i < arr.length; i++) {
+					
+					for (j in arr[i]) {
+						
+						if (arr[i].hasOwnProperty(j) && a.indexOf(j) === -1) {
+							a.push(j);
+						}
+					}
+				}
+				
+				return a;
+			}
+
+			function sortJSON(arr, direction, prop) {
+				var type;
+				
+				if (!isNaN(arr[0][prop])) {
+					type = direction === 'asc' ? sortASCNumbers : sortDESCNumbers;
+				} else {
+					type = direction === 'asc' ? sortASCText : sortDESCText;
+				}
+				return arr.slice().sort(type.bind(null, prop));
+			}
+
+			function batchWrapObj(tag, obj, keys) {
+				var k, tmp = '';
+
+				for ( k = 0; k < keys.length; k++) {
+					tmp += wrapInTag('td', obj[keys[k]] || '');
+				}
+				
+				return tmp;
+			}
+
+			function batchWrapArr(tag, arr) {
+				var i, tmp = '';
+			    
+				for ( i = 0; i < arr.length; i++) {
+					tmp += wrapInTag(tag, arr[i]);
+				}
+				
+				return tmp;
+			}
+
+			function buildTable(keys, data) {
+				var j, rows = '';
+
+				rows += wrapInTag('tr', batchWrapArr('th', keys));
+
+				for ( j = 0; j < data.length; j++) {
+					rows += wrapInTag('tr', batchWrapObj('td', data[j], keys));
+				}
+
+				return insertHTML(document.body, wrapInTag('table', rows));
+			}
+
+			function handleResponse(evt) {
+				var data = JSON.parse(evt.currentTarget.response),
+				    keys = getJSONKeys(data),
+				    sorted = sortJSON(data, 'asc', 'ID');
+
+				return buildTable(keys, sorted);
+			}
+
+			getData('http://cn.sbtech.com/sb-test/content.json', handleResponse);
+			
+			
+			var table = {
+				json: [{ID:"1","First Name":"Martin","Last Name":"Chaov",Occupation:"Front-end TL"},{ID:"3","First Name":"Lyubomir","Last Name":"Todorov",Occupation:"FE developer"},{ID:"2","First Name":"Yavor","Last Name":"Stoilov",Occupation:"FE developer"},{ID:"4","First Name":"Georgi","Last Name":"Karavasilev",Occupation:"Designer"},{ID:"5","First Name":"Georgi","Last Name":"Merdjanov",Occupation:"Designer"},{ID:"6","First Name":"Tsvetana","Last Name":"Zlatareva",Occupation:"Designer"},{ID:"7","First Name":"Boian","Last Name":"Botev",Occupation:"Production manager"},{ID:"8","First Name":"Alexander","Last Name":"Draganov",Occupation:"R&D manager","Hidden Field":"YES!"},{ID:"10","First Name":"Dessislava","Last Name":"Vasileva",Occupation:"Office manager"},{ID:"11","First Name":"Petya","Last Name":"Markova",Occupation:"Sales manager"},{ID:"9","First Name":"Rumen","Last Name":"Evtimov",Occupation:"IT support"},{ID:"12","First Name":"Tsvetelina","Last Name":"Chausheva",Occupation:"Marketing coordinator","Special Field":"YES!"}],
+				keys: null,
+				
+				filter: function(){
+				
+				},
+				sort: function(){
+				
+				},
+				getKeys: function(){
+					if(this.keys !== null) return this.keys;
+					var i, j;
+					this.keys = [];
+					for ( i = 0; i < this.json.length; i++) {
+						for (j in this.json[i]) {		
+							if (this.keys.indexOf(j) === -1) {
+								this.keys.push(j);
+							}
+						}
+					}					
+					return this.keys;
+				},
+			
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+		</script>
+	</body>
+</html>

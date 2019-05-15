@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		
+		<script>
+/*		
+			var Foo = {
+				init: function(who) {
+					this.me = who;
+				},
+				identify: function() {
+					return "I am " + this.me;
+				}
+			};
+
+			var Bar = Object.create(Foo);
+
+			Bar.speak = function() {
+				console.log("Hello, " + this.identify() + ".");
+			};
+
+			var b1 = Object.create(Bar);
+			b1.init("b1");
+			var b2 = Object.create(Bar);
+			b2.init("b2");
+
+			b1.speak(); // alerts: "Hello, I am b1."
+			b2.speak(); // alerts: "Hello, I am b2."
+		
+*/	
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		
+		const listener = (state) => {
+			return {
+				listen: (state) => {
+					console.log('speek, for JS')
+				}
+			}
+		}
+		
+		const shouter = (state) => {
+			return {
+				speak: (state) => {
+					console.log('shout, for JS')
+				}
+			}
+		}
+		
+		const speaker = (state) => {
+			return {
+				speak: (o) => {
+					console.log('speek, for JS ' + o)
+				}
+			}
+		}
+		
+		
+		
+		var createHuman = function(name){
+			
+			let state = { name, whatAmI: 'human' }
+			
+			return Object.assign(
+					state,
+					speaker(state),
+					listener(state),
+					shouter(state)
+				);
+		}
+		
+		
+		function createMale(){
+		
+		}
+		
+		function createFemale(){
+			
+			return Object.assign(
+				createHuman(),
+				femaleSpecificMethods()
+			)
+		}
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		</script>
+	</body>
+</html>

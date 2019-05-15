@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<style>
+			body, div {padding: 20px 10px; margin: 20px 0;}
+		</style>
+    </head>
+    <body>
+        
+		<button data-action="a1" type="button">My btn - 1</button>
+		<button data-action="a2" type="button">My btn - 2</button>
+		<button data-action="a3" type="button">My btn - 3</button>
+		<button data-action="a4" type="button">My btn - 4</button>
+		<button data-action="a5" type="button">My btn - 5</button>
+		
+		<script>
+			
+			var actions = {
+				a1: function(){console.log(1)},
+				a2: function(){console.log(2)},
+				a3: function(){console.log(3)},
+				a4: function(){console.log(4)},
+				a5: function(){console.log(5)}
+			}
+			
+			function handler(e){
+				actions[e.target.dataset.action]();
+			}
+			
+			document.body.addEventListener('click', handler);
+		
+		
+		</script>
+    </body>
+</html>

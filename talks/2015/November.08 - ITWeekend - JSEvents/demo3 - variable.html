@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<style>
+			body, div {padding: 20px 10px; margin: 20px 0;}
+		</style>
+    </head>
+    <body>
+        
+		<div id="d1">My div - 1</div>
+		
+        <script src="events.js"></script>
+		<script>
+		var d1 = document.getElementById('d1'),
+			ev = UIEvent({
+				 name:      'Variable',
+				 htmlRef:   d1,
+				 handler:   function(){ console.log('ev triggered') },
+				 type: 		'click'
+			});
+		
+		</script>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<script>
+		
+			function randomArray(length, max) {				
+				return Array
+					.apply(null, Array(length))
+					.map(function(_, i) {
+						return Math.round(Math.random() * max);
+					});
+			}
+		</script>
+	</body>
+</html>

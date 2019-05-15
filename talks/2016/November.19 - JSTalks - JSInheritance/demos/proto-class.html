@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		
+		<script>
+			function Foo(who) {
+				this.me = who;
+			}
+
+			Foo.prototype.identify = function() {
+				return "I am " + this.me;
+			};
+
+			function Bar(who) {
+				Foo.call(this,who);
+			}
+
+			Bar.prototype = Object.create(Foo.prototype);
+			//Bar.prototype = new Foo();
+			//Bar.prototype.constructor = Bar; // fix constructor
+			
+			Bar.prototype.speak = function() {
+				console.log("Hello, " + this.identify() + ".");
+			};
+
+			var b1 = new Bar("b1");
+			var b2 = new Bar("b2");
+
+			b1.speak(); // alerts: "Hello, I am b1."
+			b2.speak(); // alerts: "Hello, I am b2."
+		</script>
+	</body>
+</html>

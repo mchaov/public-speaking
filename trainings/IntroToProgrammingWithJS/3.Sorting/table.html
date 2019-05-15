@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<script>
+			/**
+			 * 1. Get content from: http://cn.sbtech.com/sb-test/content.json
+			 * 2. Sort the data by ID
+			 * 3. Generate array with all unique keys
+			 * 4. Generate HTML table with the data
+			 *
+			 */
+
+			"use strict";
+
+			// inserts html into any parent element
+			// parent -> DOM element
+			// html -> string
+			function insertHTML(parent, html) {
+				// returns the result of HTMLElement.innerHTML
+				return parent.innerHTML = html;
+			}
+
+			// generates string with HTML tag name around it
+			// tag -> string, html tag name
+			// str -> string, what text to wrap in the tag name
+			function wrapInTag(tag, str) {
+				// returnst contatenation of '<' + VARIABLE + '>' ... etc.
+				return '<' + tag + '>' + str + '</' + tag + '>';
+			}
+			
+			// sorts numeric properties in ascending order
+			// prop -> string
+			// a, b -> objects in array
+			function sortASCNumbers(prop, a, b) {
+				// object[property] - object[property]
+				// result < 0 -> returns false
+				// result > 0 -> returns true
+				return a[prop] - b[prop];
+			};
+			
+			// sorts numbers in descending order
+			// check "sortASCNumbers" for more information
+			function sortDESCNumbers(prop, a, b) {
+				return b[prop] - a[prop];
+			};
+			
+			// sorts text in ascending order by comparing localized values
+			// localCompare is string specific method
+			// check the web for more information
+			// prop -> string
+			// a, b -> obejcts in array
+			function sortASCText(prop, a, b) {
+				// object[property].localeComapre(object[property])
+				return a[prop].localeCompare(b[prop]);
+			};
+			
+			// sorts text in descending order,
+			// check "sortASCText" for more information
+			function sortDESCText(prop, a, b) {
+				return b[prop].localeCompare(a[prop]);
+			};
+
+			// requests URL and calls a callback funtion
+			// url -> string
+			// callback -> function passed by reference
+			function getData(url, callback) {
+				// get instance of the XMLHttpRequest class
+				var oReq = new XMLHttpRequest();
+				
+				// attach event listener to your instance of the class
+				// that will fire when the result is loaded and then
+				// pass the callback function to be called when 
+				// the response is being resolved
+				oReq.addEventListener("load", callback);
+				
+				// open channel for get operation
+				oReq.open("GET", url);
+				
+				// send the request and wait for it to be resolved
+				// so your callback passed on "load" will fire
+				// with the date you requested
+				oReq.send();
+			}
+
+			// get all unique keys from all the obejcts in an 
+			// JSON style array
+			// arr -> JSON
+			function getJSONKeys(arr) {
+				var a = [], // new array to store the unique keys
+				    i,		// iterator
+				    j;		// iterator
+				
+				// loop through all the objects in the array
+				for ( i = 0; i < arr.length; i++) {
+					
+					// loop through all the properties of each object
+					for (j in arr[i]) {
+						
+						// check if the property is actual property of the object
+						// and only if so, then check if the property doesn't exist in the 
+						// newly formed array
+						// if both operations are true, push the newly found unique key
+						// in the temporal array
+						if (arr[i].hasOwnProperty(j) && a.indexOf(j) === -1) {
+							a.push(j);
+						}
+					}
+				}
+				
+				// return the newly formed array with keys
+				return a;
+			}
+
+			// sort the JSON by using one of the pre-defined sorting functions
+			// arr -> JSON to sort
+			// dircetion -> string, "asc" || "desc"
+			// prop -> string, sortable property
+			function sortJSON(arr, direction, prop) {
+				var type; // to hold reference to the type of sorting
+
+				// check if the sortable property is "number" or "string"
+				// "isNaN" returs "true" for text and "false" for numbers
+				// negating the result with "!" give "true" if the result is number
+				if (!isNaN(arr[0][prop])) {
+					// shorthand "if/else"
+					// checks if direction equals "asc"
+					// if asc, choose to sort numbers in asc, otherwise - desc
+					type = direction === 'asc' ? sortASCNumbers : sortDESCNumbers;
+				} else {
+					// same as for the numerics, but for string
+					type = direction === 'asc' ? sortASCText : sortDESCText;
+				}
+				
+				// now that the "type" variable holds a reference to the proper
+				// sorting function, just pass it to the array.sort() method
+				
+				// return "new" array by invoking the .slice() method with no arguments passed on it
+				// then do a chain call of .sort() and pass the already addressed "type" function to it
+				// "bind" no context "null" to the function reference and the "prop" that we want to sort
+				// so that the sorting functions can use it to get the relevant data from the objects
+				return arr.slice().sort(type.bind(null, prop));
+			}
+
+			// bactch wrap object properties in HTML tags
+			// tag -> string
+			// obj -> object to get property values from
+			// keys -> array of all the unique keys we are intered in
+			function batchWrapObj(tag, obj, keys) {
+				var k,			// iterator
+				    tmp = '';	// temporal string
+				    
+			    // for every unique key  in "keys" call wrapInTag
+				for ( k = 0; k < keys.length; k++) {
+					// concatenate the result from "wrapInTag" to the temp string
+					// "object[uniqueKeys[uniqueKey]]" or "empty string" if the key is "undefined"
+					tmp += wrapInTag('td', obj[keys[k]] || '');
+				}
+				
+				// return the newly formed string
+				return tmp;
+			}
+
+			// batch wrap all the elements from an array in a tag
+			// tag -> string, html tag name
+			// arr -> array of elements to wrap
+			function batchWrapArr(tag, arr) {
+				var i,			// iterator
+				    tmp = '';	// temporary string
+			    
+			    // for every element in the array call wrapInTag
+				for ( i = 0; i < arr.length; i++) {
+					// concatenate the result from the function to the
+					// temporary variable
+					tmp += wrapInTag(tag, arr[i]);
+				}
+				
+				// return the newly formed string
+				return tmp;
+			}
+
+			// main build table function
+			// keys -> array, all unique keys from the JSON object
+			// data -> JSON array, already sorted
+			function buildTable(keys, data) {
+				var j,			// iterator
+				    rows = '';	// temporary string
+
+				// concatenate the result from batch wrapping all the 
+				// unique keys into "th"s with the result of wrapping it
+				// in a "tr" to get the header row of the table
+				rows += wrapInTag('tr', batchWrapArr('th', keys));
+
+				// for every item in the JSON array wrap in "tr"
+				for ( j = 0; j < data.length; j++) {
+					// concatenate the result of batch wrapping all the 
+					// object properties into "td"s based on all the unique keys 
+					// for every object, and wrap them into a "tr"
+					rows += wrapInTag('tr', batchWrapObj('td', data[j], keys));
+				}
+
+				// return operation that wraps the string of all the rows
+				// into a table, and inserts the result into the HTML body
+				return insertHTML(document.body, wrapInTag('table', rows));
+			}
+
+			// handle the response data from the XMLHTTPRequest
+			// evt -> automatically passed "event" object
+			function handleResponse(evt) {
+				// evt -> event object
+				// evt.currentTarget -> XMLHTTPRequest object
+				// .currentTarget.response -> result from the XMLHTTPRequest
+				var data = JSON.parse(evt.currentTarget.response),	// JSON parse the result to get object from the string
+				    keys = getJSONKeys(data),						// get all unique keys from the JSON elements
+				    sorted = sortJSON(data, 'asc', 'ID');			// sort the JSON by "direction" and "property"
+
+				// pass the already prepared data to our table
+				return buildTable(keys, sorted);					// return the buildTable as a callback
+			}
+
+			// initialize the getData function to start our program
+			getData('http://cn.sbtech.com/sb-test/content.json', handleResponse);
+
+		</script>
+	</body>
+</html>

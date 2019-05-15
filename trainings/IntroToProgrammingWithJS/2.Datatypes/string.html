@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+	
+		<script>
+			
+			var a = 'abcAbcabc  ';
+			var b = 'defdef'
+			
+			console.log(a.charAt(1));
+			console.log(a.charCodeAt(1));
+			console.log(String.fromCharCode(65));
+			console.log(a.indexOf('a'));
+			
+			console.log(a.lastIndexOf('c'));
+			
+			console.log(a.startsWith('a'));
+			console.log(a.endsWith('c'));
+			
+			console.log(a.concat(b));
+			
+			console.log(a.includes('b'));
+			
+			console.log(a.localeCompare(b));
+			
+			console.log(a.match('a', 'gim'));
+			console.log(a.match(/a/g));
+			console.log(a.match(/a/gi));
+			
+			console.log(a.repeat(50));
+			
+			console.log(a.replace('ab', 'ba'));
+			console.log(a.replace(/a/gi, 'BA'));
+			
+			console.log(a.search('A'));
+			console.log(a.search(/a/gi));
+			
+			console.log(a.slice(1, 4));
+			console.log(a.substr(1, 4));
+			console.log(a.substring());
+			
+			console.log(a.split('a'));
+			console.log(a.split(/a/gi));
+			
+			console.log(a.toLocaleLowerCase());
+			console.log(a.toLowerCase());
+			console.log(a.toLocaleUpperCase());
+			console.log(a.toUpperCase());
+			
+			console.log(a.toString());
+			
+			console.log(a.trim());
+			
+			console.log(a.valueOf());
+		</script>
+	</body>
+</html>

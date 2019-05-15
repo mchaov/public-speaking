@@ -1,0 +1,131 @@
+html, body, a, div, h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 100%;
+    font-family: Helvetica, Arial, Sans-Serif;
+    vertical-align: baseline;
+    color: #777;
+    line-height: 1;
+    text-align: left;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background: #F1F1F1;
+    text-align: center;
+    height: 100%;
+}
+
+#Frame {
+    width: 768px;
+    height: 100%;
+    margin: 0px auto;
+}
+
+#ContentFrame {
+    background: #FFFFFF url(background.jpg) top center no-repeat;
+    float: left;
+    width: 742px;
+    min-height: 100%;
+    position: relative;
+    overflow: hidden;
+    padding-left: 13px;
+    padding-right: 13px;
+}
+
+#MainContent {
+    background: none;
+    float: left;
+    width: 576px;
+    height: 100%;
+    padding-bottom: 30000px;
+    margin-bottom: -30000px;
+}
+
+#RightContent {
+    background: none;
+    float: left;
+    width: 166px;
+    height: 100%;
+}
+
+#ViewerButton {
+    margin-top: 118px;
+    margin-left: 10px;
+    height: 32px;
+    font-size: 1em;
+    text-align: center;
+    margin-right: 7px;
+    background: url(button.jpg) left no-repeat;
+}
+
+#ViewerButton a:link, #ViewerButton a:visited{
+   font-size: .8em;
+   color: #000;
+   line-height: 2.1em;
+}
+
+#BorderLeft {
+    background: #F1F1F1 url(shdwLeft.jpg) right repeat-y;
+    float: left;
+    width: 13px;
+    position: relative;
+    padding-bottom: 30000px;
+    margin-bottom: -30000px;
+    margin-left: -13px;
+}
+
+#BorderRight {
+    background: #F1F1F1 url(shdwRight.jpg) left repeat-y;
+    float: left;
+    width: 13px;
+    position: relative;
+    padding-bottom: 30000px;
+    margin-bottom: -30000px;
+    margin-right: -13px;
+}
+
+h1 { 
+    color: #777;
+    font-family: "Segoe UI",Verdana,Arial,sans-serif;
+    font-size: 1.6em;
+    font-weight: bold;
+    border-bottom: 1px solid #777;
+    margin-top: 86px;
+    margin-left: 140px;
+    margin-bottom: 20px;
+    margin-right: 0px;
+    padding-bottom: .3em;
+}
+
+h2 { 
+    color: #777;
+    font-family: "Segoe UI",Verdana,Arial,sans-serif;
+    font-size: 1.1em;
+    margin-left: 140px; 
+    padding-bottom: .3em;
+}
+
+h3 {
+    font-family: "Segoe UI",Verdana,Arial,sans-serif;
+    color: #AAA;
+    font-size: .8em;
+    text-decoration: none;
+    margin-left: 140px;
+    padding-bottom: 1.5em;
+} 
+
+a:link, a:visited, a:active {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+

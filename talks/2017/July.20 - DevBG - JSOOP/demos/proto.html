@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+        "user strict"
+        var Animal = (function () {
+            function Animal(name) {
+                this.name = name;
+            }
+
+            Animal.prototype.eat = function () {
+                console.log(this.name, "nom nom");
+            }
+
+            Animal.prototype.poop = function () {
+                console.log(this.name, "...");
+            }
+
+            return Animal;
+        }());
+
+        var Dog = (function (_super) {
+            function Dog(name) {
+                _super.apply(this, arguments);
+            }
+
+            Object.assign(Dog.prototype, _super.prototype);
+
+            Dog.prototype.bark = function () {
+                console.log(this.name, "bau bau");
+            }
+
+            return Dog;
+        }(Animal));
+    </script>
+</body>
+
+</html>

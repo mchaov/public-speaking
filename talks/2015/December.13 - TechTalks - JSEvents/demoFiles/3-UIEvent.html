@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<style>
+			body, div {padding: 20px 10px; margin: 20px 0;}
+		</style>
+    </head>
+    <body>
+        
+		<button type="button" id="d1">My btn - 1</button>
+		
+        <script src="events.js"></script>
+		<script>
+		var htmlRef = document.getElementById('d1');
+		
+		UIEvent({
+			 name:      'My event - 1',
+			 htmlRef:   htmlRef,
+			 handler:   function(){
+				
+				console.log(this.htmlRef.events);
+			 },
+			 type: 		'click'
+		});
+		/*
+		UIEvent({
+			 name:      'My event - 2',
+			 htmlRef:   htmlRef,
+			 handler:   function(){alert('it works')},
+			 type: 		'click'
+		});
+		UIEvent({
+			 name:      'My event - 3',
+			 htmlRef:   htmlRef,
+			 handler:   function(){alert('it works')},
+			 type: 		'click'
+		});
+		UIEvent({
+			 name:      'My event - 4',
+			 htmlRef:   htmlRef,
+			 handler:   function(){alert('it works')},
+			 type: 		'click'
+		});
+		*/
+		</script>
+    </body>
+</html>

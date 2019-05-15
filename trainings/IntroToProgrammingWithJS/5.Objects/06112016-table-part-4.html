@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<style>
+			ul {
+				border: 1px solid #cecece;
+				padding-right: 20px;
+			}
+			table {
+				clear: both;
+				border: 1px solid #cecece;
+			}
+			table td {
+				border: 1px solid #dedede;
+				padding: 2px 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			/* COMMENTED IN EARLIER EXCERSISES \/ */
+			"use strict";
+			function sortASCNumbers(prop, a, b)		{ return a[prop] - b[prop]; };
+			function sortDESCNumbers(prop, a, b)	{ return b[prop] - a[prop]; };
+			function sortASCText(prop, a, b)		{ return a[prop].localeCompare(b[prop]); };
+			function sortDESCText(prop, a, b)		{ return b[prop].localeCompare(a[prop]); };
+			function insertHTML(parent, html)		{ return parent.innerHTML = html; }
+			function insertAdjHTML(parent, html)	{ return parent.insertAdjacentHTML('beforeend', html); };
+			function wrapInTag(tag, str, id)		{ return '<' + tag + ' ' + (id ? 'id = "' + id + '"' : '') + ' >' + str + '</' + tag + '>'; }
+			function batchWrapObj(tag, obj, keys) {
+				var k, tmp = '';
+				for ( k = 0; k < keys.length; k++) {
+					tmp += wrapInTag('td', obj[keys[k]] || '');
+				}
+				return tmp;
+			}
+			function batchWrapArr(tag, arr) {
+				var i, tmp = '';
+				for ( i = 0; i < arr.length; i++) {
+					tmp += wrapInTag(tag, arr[i]);
+				}
+				return tmp;
+			}
+			function getData(url, callback) {
+				var oReq = new XMLHttpRequest();
+				oReq.addEventListener("load", callback);
+				oReq.open("GET", url);
+				oReq.send();
+			}
+			/* COMMENTED IN EARLIER EXCERSISES /\ */
+			
+			// Proto object to create other objects from
+			var table = {
+				_id: null,		// auto-generated unique ID
+				_keys: null,	// auto-populated keys array
+				_json: null,	// cache the original data we get from the server
+				_sorted: null,	// cache the sorted data
+				
+				// filter values (already commented in the previous example)
+				filter: function(key, value, flag){
+					var regex = new RegExp(value, 'gim');
+					
+					flag = typeof flag === "undefined" ? true : flag;
+					
+					// cache the result in the this._sorted
+					// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+					this._sorted = this._sorted.filter(function(x){
+						return !!x[key].match(regex) === flag;
+					});
+					
+					// return this to support method chaining
+					return this;
+				},
+				
+				// sort values (already commented in the previous example)
+				sort: function(direction, prop){
+					var type, 
+						// setup default values for the sorting
+						direction = typeof direction === 'undefined' ? 'asc' : direction,	// ascending or direction
+						prop = typeof prop === 'undefined' ? this._keys[0] : prop;			// passed property or first one in the _keys array
+						
+					if (isNaN(this._json[0][prop])) {
+						type = direction === 'asc' ? sortASCText : sortDESCText;
+					} else {
+						type = direction === 'asc' ? sortASCNumbers : sortDESCNumbers;
+					}
+					
+					// always re-sort the original array and create new one based on the result
+					this._sorted = this._json.slice().sort(type.bind(null, prop))
+					
+					// return this to support method chaining
+					return this;
+				},
+				
+				// get only specific keys from the table
+				getByKey: function(key){
+					// check MDN for detailed description of .reduce
+					// https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
+					return this._sorted.reduce(function(a, b){
+						// check 
+						typeof b[key] !== undefined && a.push(b[key]);
+						return a;
+					}, []);
+					
+					// we do not return this, as that method is intended to 
+					// return data to outside sources
+				},
+				
+				// generate the keys and cache them
+				generateKeys: function(){
+					if(this._keys !== null) return this; // if we have already generated the keys .. return
+					
+					this._keys = [];
+					// https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+					this._json.forEach(function(x){
+						// Object.keys -> returns arrays of all keys
+						return Object.keys(x).forEach(function(x){
+							return this._keys.indexOf(x) === -1 && this._keys.push(x);
+						// pass context
+						}.bind(this));
+					// pass context
+					}.bind(this));
+					
+					// return this to support method chaining
+					return this;
+				},
+				
+				// build table header
+				// tHead -> tr/td
+				buildHeader: function(){
+					return wrapInTag('thead', wrapInTag('tr', batchWrapArr('th', this._keys)));
+				},
+				
+				// build content rows
+				// tr/td
+				buildContentRows: function(){
+					var rows = '';
+					this._sorted.forEach(function(x){
+						return rows += wrapInTag('tr', batchWrapObj('td', x, this._keys));
+					// pass context
+					}.bind(this));
+					return rows;
+				},
+				
+				// build content tBody
+				buildContent: function(){
+					return wrapInTag('tbody', this.buildContentRows(), this._id);
+				},
+				
+				// wrap all in table tag
+				buildTable: function(){
+					return wrapInTag('table', this.buildHeader() + this.buildContent());
+				},
+				
+				// invoke build of HTML and add to document
+				build: function(){
+					insertAdjHTML(document.body, this.buildTable())
+					
+					// return this to support method chaining
+					return this;
+				},
+				
+				// refresh table data
+				refresh: function(){
+					this.sort()
+					this.update();
+					
+					// return this to support method chaining
+					return this;
+				},
+				
+				// update table data
+				update: function(){
+					insertHTML(document.getElementById(this._id), this.buildContentRows());
+					
+					// return this to support method chaining
+					return this;
+				},
+				
+				// async handle to call
+				handler: function(e){
+					this._json = JSON.parse(e.currentTarget.response);
+					
+					// this is why we return "this" in some of the methods
+					this.generateKeys().sort().build();
+					
+					// return this to support method chaining
+					return this;
+				},
+				
+				// init method
+				init: function(url){
+					// auto generate ID
+					this._id = 'id-' + performance.now().toString(16);
+					
+					// bind "this" to handler
+					getData(url || 'http://cn.sbtech.com/sb-test/MOCK_DATA_2.json', this.handler.bind(this));
+					
+					// return this to support method chaining
+					return this;
+				}
+			}
+			
+			var a = Object.create(table);
+			var b = Object.create(table);
+			
+			a.init('http://cn.sbtech.com/sb-test/content.json');
+			b.init('http://cn.sbtech.com/sb-test/MOCK_DATA_2.json');
+			
+			setTimeout(function(){
+				alert('timeout fired - re-sort and update tables')
+				a.filter('Occupation', 'mana').update();
+				b.filter('Occupation', 'Professor').update();
+			}, 5000);
+			
+		</script>
+	</body>
+</html>

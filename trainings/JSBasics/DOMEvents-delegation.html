@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			ul {
+				width: 400px;
+			}
+			li {
+				margin: 1px;
+				padding: 10px;
+				cursor: pointer;
+				border: 1px solid #cecece;
+			}
+			
+			li * {
+			}
+			
+			.x {
+				background: #cef0f0;
+			}
+			.y {
+				background: #f0cef0;
+			}
+			.z {
+				background: #f0f0ce;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="parent">
+			<li action="actX" params="act x 1" class="x"> 
+				<span>
+					Action X - 1 
+				</span>
+				some other text
+			</li>
+			<li action="actY" params="act y 2" class="y"> Action Y - 2 </li>
+			<li action="actX" params="act x 2" class="x"> Action X - 2 </li>
+			<li action="actX" params="act x 3" class="x"> Action X - 3 </li>
+			<li action="actZ" params="act z 1" class="z"> Action Z - 1 </li>
+			<li action="actY" params="act y 1" class="y"> Action Y - 1 </li>
+		</ul>
+
+		<script>
+			
+			var actions = {
+				actX: function(params){
+					console.info(params);
+				},
+				actY: function(params){
+					console.warn(params);
+				},
+				actZ: function(params){
+					console.log(params);
+				}
+			}
+			
+			function handler(e){
+				//console.log(e.target.parentNode);
+				var target = e.target;
+				var action = target.getAttribute('action');
+				
+				if (typeof actions[action] === "function"){
+					return actions[action].call(target, target.getAttribute('params'));
+				}
+			}
+			
+			var ul = document.getElementById("parent");
+			ul.addEventListener("click", handler, true);
+			
+			
+		</script>		
+	</body>
+</html>

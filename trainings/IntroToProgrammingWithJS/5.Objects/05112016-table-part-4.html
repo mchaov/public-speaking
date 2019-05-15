@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<style>
+			ul {
+				border: 1px solid #cecece;
+				padding-right: 20px;
+			}
+			table {
+				clear: both;
+				border: 1px solid #cecece;
+			}
+			table td {
+				border: 1px solid #dedede;
+				padding: 2px 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			/* COMMENTED IN EARLIER EXCERSISES \/ */
+			"use strict";
+			function sortASCNumbers(prop, a, b)		{ return a[prop] - b[prop]; };
+			function sortDESCNumbers(prop, a, b)	{ return b[prop] - a[prop]; };
+			function sortASCText(prop, a, b)		{ return a[prop].localeCompare(b[prop]); };
+			function sortDESCText(prop, a, b)		{ return b[prop].localeCompare(a[prop]); };
+			function insertHTML(parent, html)		{ return parent.innerHTML = html; }
+			function insertAdjHTML(parent, html)	{ return parent.insertAdjacentHTML('beforeend', html); };
+			function wrapInTag(tag, str, id)		{ return '<' + tag + ' ' + (id ? 'id = "' + id + '"' : '') + ' >' + str + '</' + tag + '>'; }
+			function batchWrapObj(tag, obj, keys) {
+				var k, tmp = '';
+				for ( k = 0; k < keys.length; k++) {
+					tmp += wrapInTag('td', obj[keys[k]] || '');
+				}
+				return tmp;
+			}
+			function batchWrapArr(tag, arr) {
+				var i, tmp = '';
+				for ( i = 0; i < arr.length; i++) {
+					tmp += wrapInTag(tag, arr[i]);
+				}
+				return tmp;
+			}
+			function getData(url, callback) {
+				var oReq = new XMLHttpRequest();
+				oReq.addEventListener("load", callback);
+				oReq.open("GET", url);
+				oReq.send();
+			}
+			/* COMMENTED IN EARLIER EXCERSISES /\ */
+			
+			
+			var table = {
+				_id: null,
+				_keys: null,
+				_json: null,
+				_sorted: null,
+				
+				filter: function(key, value, flag){
+					var regex = new RegExp(value, 'gim');
+					
+					flag = typeof flag === "undefined" ? true : flag;
+					
+					this._sorted = this._sorted.filter(function(x){
+						return !!x[key].match(regex) === flag;
+					});
+					
+					return this;
+				},
+				
+				sort: function(direction, prop){
+					var type, 
+						direction = typeof direction === 'undefined' ? 'asc' : direction,
+						prop = typeof prop === 'undefined' ? this._keys[0] : prop;
+						
+					if (isNaN(this._json[0][prop])) {
+						type = direction === 'asc' ? sortASCText : sortDESCText;
+					} else {
+						type = direction === 'asc' ? sortASCNumbers : sortDESCNumbers;
+					}
+					this._sorted = this._json.slice().sort(type.bind(null, prop))
+					
+					return this;
+				},
+				
+				getByKey: function(key){
+					return this._json.reduce(function(a, b){
+						typeof b[key] !== undefined && a.push(b[key]);
+						return a;
+					}, []);
+				},
+				
+				generateKeys: function(){
+					if(this._keys !== null) return this;
+					
+					this._keys = [];
+					this._json.forEach(function(x){
+						return Object.keys(x).forEach(function(x){
+							return this._keys.indexOf(x) === -1 && this._keys.push(x);
+						}.bind(this));
+					}.bind(this));
+					
+					return this;
+				},
+				
+				buildHeader: function(){
+					return wrapInTag('thead', wrapInTag('tr', batchWrapArr('th', this._keys)));
+				},
+				
+				buildContentRows: function(){
+					var j, rows = '';
+					for ( j = 0; j < this._sorted.length; j++) {
+						rows += wrapInTag('tr', batchWrapObj('td', this._sorted[j], this._keys));
+					}
+					return rows;
+				},
+				
+				buildContent: function(){
+					return wrapInTag('tbody', this.buildContentRows(), this._id);
+				},
+				
+				buildTable: function(){
+					return wrapInTag('table', this.buildHeader() + this.buildContent());
+				},
+				
+				build: function(){
+					insertAdjHTML(document.body, this.buildTable())
+					
+					return this;
+				},
+				
+				refresh: function(){
+					this.sort()
+					this.update();
+					return this;
+				},
+				
+				update: function(){
+					insertHTML(document.getElementById(this._id), this.buildContentRows());
+					
+					return this;
+				},
+				
+				handler: function(е){
+					this._json = JSON.parse(е.currentTarget.response);
+					this.generateKeys().sort().build();
+					return this;
+				},
+				
+				init: function(){
+					this._id = 'id-' + performance.now().toString(16);
+					getData('http://cn.sbtech.com/sb-test/MOCK_DATA_2.json', this.handler.bind(this));
+					return this;
+				}
+			}
+			
+			//table.init();
+			
+		</script>
+	</body>
+</html>

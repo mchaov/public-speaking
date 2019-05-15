@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<script>
+		"use strict";
+		
+			var foo = {};
+			
+			Object.defineProperties(foo, {
+				_a: {
+					configurable: false,
+					enumerable: false,
+					writable: false,
+					value: 1
+				},
+				b: {
+					configurable: false,
+					enumerable: true,
+					writable: true,
+					value: 1
+				},
+				a: {
+					configurable: false,
+					enumerable: true,
+					get: function()	{ return this._a; },
+					set: function(x){ return this._a = x; }
+				}
+			})
+			
+			var bar = Object.create(foo);
+		
+		</script>
+	</body>
+</html>

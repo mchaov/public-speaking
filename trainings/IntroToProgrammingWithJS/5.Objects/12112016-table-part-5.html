@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<style>
+			ul {
+				border: 1px solid #cecece;
+				padding-right: 20px;
+			}
+			table {
+				clear: both;
+				border: 1px solid #cecece;
+			}
+			table td {
+				border: 1px solid #dedede;
+				padding: 2px 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			/* COMMENTED IN EARLIER EXCERSISES \/ */
+			"use strict";
+			function sortASCNumbers(prop, a, b)		{ return a[prop] - b[prop]; };
+			function sortDESCNumbers(prop, a, b)	{ return b[prop] - a[prop]; };
+			function sortASCText(prop, a, b)		{ return a[prop].localeCompare(b[prop]); };
+			function sortDESCText(prop, a, b)		{ return b[prop].localeCompare(a[prop]); };
+			function insertHTML(parent, html)		{ return parent.innerHTML = html; }
+			function insertAdjHTML(parent, html)	{ return parent.insertAdjacentHTML('beforeend', html); };
+			function wrapInTag(tag, str, id)		{ return '<' + tag + ' ' + (id ? 'id = "' + id + '"' : '') + ' >' + str + '</' + tag + '>'; }
+			function batchWrapObj(tag, obj, keys) {
+				var k, tmp = '';
+				for ( k = 0; k < keys.length; k++) {
+					tmp += wrapInTag('td', obj[keys[k]] || '');
+				}
+				return tmp;
+			}
+			function batchWrapArr(tag, arr) {
+				var i, tmp = '';
+				for ( i = 0; i < arr.length; i++) {
+					tmp += wrapInTag(tag, arr[i]);
+				}
+				return tmp;
+			}
+			function getData(url, callback) {
+				var oReq = new XMLHttpRequest();
+				oReq.addEventListener("load", callback);
+				oReq.open("GET", url);
+				oReq.send();
+			}
+			/* COMMENTED IN EARLIER EXCERSISES /\ */
+			
+			
+			var table = (function(){
+				
+				var _id = null,
+					_keys = null,
+					_json = null,
+					_sorted = null;
+				
+					function filter(key, value, flag){
+						var regex = new RegExp(value, 'gim');
+						flag = typeof flag === "undefined" ? true : flag;
+						_sorted = _sorted.filter(function(x){
+							return !!x[key].match(regex) === flag;
+						});
+						return this;
+					}
+					
+					function sort(direction, prop){
+						var type, 
+							direction = typeof direction === 'undefined' ? 'asc' : direction,	// ascending or direction
+							prop = typeof prop === 'undefined' ? _keys[0] : prop;			// passed property or first one in the _keys array
+							
+						if (isNaN(_json[0][prop])) {
+							type = direction === 'asc' ? sortASCText : sortDESCText;
+						} else {
+							type = direction === 'asc' ? sortASCNumbers : sortDESCNumbers;
+						}
+						_sorted = _json.slice().sort(type.bind(null, prop))
+						return this;
+					}
+					
+					function getByKey(key){
+						return _sorted.reduce(function(a, b){
+							typeof b[key] !== undefined && a.push(b[key]);
+							return a;
+						}, []);
+					}
+					
+					function generateKeys(){
+						if(_keys !== null) return this; // if we have already generated the keys .. return
+						_keys = [];
+						_json.forEach(function(x){
+							return Object.keys(x).forEach(function(x){
+								return _keys.indexOf(x) === -1 && _keys.push(x);
+							});
+						});
+						return this;
+					}
+					
+					function buildHeader(){
+						return wrapInTag('thead', wrapInTag('tr', batchWrapArr('th', _keys)));
+					}
+					
+					function buildContentRows(){
+						var rows = '';
+						_sorted.forEach(function(x){
+							return rows += wrapInTag('tr', batchWrapObj('td', x, _keys));
+						}.bind(this));
+						return rows;
+					}
+					
+					function buildContent(){
+						return wrapInTag('tbody', buildContentRows(), _id);
+					}
+					
+					function buildTable(){
+						return wrapInTag('table', buildHeader() + buildContent());
+					}
+					
+					function build(){
+						insertAdjHTML(document.body, buildTable())
+						return this;
+					}
+					
+					function refresh(){
+						sort()
+						update();
+						return this;
+					}
+					
+					function update(){
+						insertHTML(document.getElementById(_id), buildContentRows());
+						return this;
+					}
+					
+					function handler(e){
+						_json = JSON.parse(e.currentTarget.response);
+						generateKeys();
+						sort();
+						build();
+					}
+					
+					function init(url){
+						_id = 'id-' + performance.now().toString(16);
+						getData(url || 'http://cn.sbtech.com/sb-test/MOCK_DATA_2.json', handler);
+						return this;
+					}
+				
+				return {
+					filter: filter,
+					sort: sort,
+					refresh: refresh,
+					update: update,
+					init: init
+				}
+				
+			}()); 
+			
+			/*
+			var a = Object.create(table);
+			var b = Object.create(table);
+			
+			a.init('http://cn.sbtech.com/sb-test/content.json');
+			b.init('http://cn.sbtech.com/sb-test/MOCK_DATA_2.json');
+			
+			setTimeout(function(){
+				alert('timeout fired - re-sort and update tables')
+				a.filter('Occupation', 'mana').update();
+				b.filter('Occupation', 'Professor').update();
+			}, 5000);
+			*/
+		</script>
+	</body>
+</html>

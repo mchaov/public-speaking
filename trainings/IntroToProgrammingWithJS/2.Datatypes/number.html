@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+	
+		<script>
+			
+			function add(a, b){
+				return a + b;
+			}
+			
+			function divide(a, b){
+				return a / b;
+			}
+			
+			function multiply(a, b){
+				return a * b;
+			}
+			
+			function sub(a, b){
+				return a - b;
+			}
+			
+			function doMath(a, b, c){
+				return eval( "a " + b + " c" );
+			}
+			
+			function diskriminant(a, b, c){
+				return sub(Math.pow( b, 2 ), multiply( multiply( 4, a ), c ) );
+			}
+			
+			function koreni(a, b, d){				
+				var x1 = add( -b, divide(Math.sqrt( d )), multiply(a, 2));
+				var x2 = sub( -b, divide(Math.sqrt( d )), multiply(a, 2));
+				return 'x1 = ' + x1 + '; x2 = ' + x2;
+			}
+			
+			function quadraticEquation(a, b, c){
+				var d = diskriminant(a, b, c);
+				var result;
+				
+				if(d < 0)
+				{
+					result = 'Nqma realni koreni';
+				} 
+				else 
+				{
+					result = koreni(a, b, d);
+				}
+				return result;
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			function unitConverter(r, v, u){
+				return multiply( v, r ) + ' ' + u;
+			}
+			
+			function metterToCentimeter( m, cm ) {
+				return unitConverter( m, cm, 'cm');
+			}
+			
+			
+		</script>
+	</body>
+</html>

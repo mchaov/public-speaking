@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+        class Pooper {
+            constructor(name) {
+                this.name = name;
+            }
+            poop() {
+                console.log(this.name, "...");
+            }
+        }
+
+        class Eater {
+            constructor(name) {
+                this.name = name;
+            }
+            eat() {
+                console.log(this.name, "nom nom");
+            }
+        }
+
+        class Dog {
+            constructor(name) {
+                this.name = name;
+                this.eat = new Eater(name).eat;
+                this.poop = new Pooper(name).poop;
+            }
+
+            bark() {
+                console.log(this.name, "bau bau");
+            }
+        }
+    </script>
+</body>
+
+</html>

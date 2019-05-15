@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+        var animal = {
+            name: "",
+            eat: function () {
+                console.log(this.name, "nom nom");
+            },
+            poop: function () {
+                console.log(this.name, "...");
+            },
+        }
+
+        var dog = Object.create(animal);
+        dog.name = "Marti";
+        dog.bark = function () { console.log(this.name, "bau bau") };
+    </script>
+</body>
+
+</html>

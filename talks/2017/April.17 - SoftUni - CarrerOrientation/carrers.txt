@@ -1,0 +1,75 @@
+1. Кой съм аз?
+
+
+2. JavaScript: 1995
+JavaScript, aka Mocha, aka LiveScript, aka JScript, aka ECMAScript
+
+3. Какво е JavaScript?
+The Java- prefix suggests that JavaScript is somehow related to Java, that it is a subset or less capable version of Java. It seems that the name was intentionally selected to create confusion, and from confusion comes misunderstanding. JavaScript is not interpreted Java. Java is interpreted Java. JavaScript is a different language.
+
+JavaScript has a syntactic similarity to Java, much as Java has to C. But it is no more a subset of Java than Java is a subset of C. It is better than Java in the applications that Java (fka Oak) was originally intended for.
+
+JavaScript was not developed at Sun Microsystems, the home of Java. JavaScript was developed at Netscape. It was originally called LiveScript, but that name wasn't confusing enough.
+
+The -Script suffix suggests that it is not a real programming language, that a scripting language is less than a programming language. But it is really a matter of specialization. Compared to C, JavaScript trades performance for expressive power and dynamism.
+
+---
+
+JavaScript's C-like syntax, including curly braces and the clunky for statement, makes it appear to be an ordinary procedural language. This is misleading because JavaScript has more in common with functional languages like Lisp or Scheme than with C or Java. It has arrays instead of lists and objects instead of property lists. Functions are first class. It has closures. You get lambdas without having to balance all those parens.
+
+
+
+4. Design Errors
+
+No programming language is perfect. JavaScript has its share of design errors, such as the overloading of + to mean both addition and concatenation with type coercion, and the error-prone with statement should be avoided. The reserved word policies are much too strict. Semicolon insertion was a huge mistake, as was the notation for literal regular expressions. These mistakes have led to programming errors, and called the design of the language as a whole into question. Fortunately, many of these problems can be mitigated with a good lint program.
+
+The design of the language on the whole is quite sound. Surprisingly, the ECMAScript committee does not appear to be interested in correcting these problems. Perhaps they are more interested in making new ones.
+
+
+
+5. Object-Oriented
+
+Is JavaScript object-oriented? It has objects which can contain data and methods that act upon that data. Objects can contain other objects. It does not have classes, but it does have constructors which do what classes do, including acting as containers for class variables and methods. It does not have class-oriented inheritance, but it does have prototype-oriented inheritance.
+
+The two main ways of building up object systems are by inheritance (is-a) and by aggregation (has-a). JavaScript does both, but its dynamic nature allows it to excel at aggregation.
+
+Some argue that JavaScript is not truly object oriented because it does not provide information hiding. That is, objects cannot have private variables and private methods: All members are public.
+
+But it turns out that JavaScript objects can have private variables and private methods. (Click here now to find out how.) Of course, few understand this because JavaScript is the world's most misunderstood programming language.
+
+Some argue that JavaScript is not truly object oriented because it does not provide inheritance. But it turns out that JavaScript supports not only classical inheritance, but other code reuse patterns as well.
+
+
+
+6. Защо JavaScript?
+
+Easy to start with
+
+One language to rule them all
+- front-end
+- back-end
+- embedded
+- functional approach
+- OOP approach
+
+
+“JavaScript will stay relevant as long as people use the Internet.”
+William Ting’s answer to the same question saying.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

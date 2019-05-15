@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+	
+		<script>
+			
+			var p0 = {x: 1, y: 2};
+			var p1 = {x: 2, y: 3};
+			var p2 = {x: 3, y: 4};
+			
+			function calcQuadraticBezierPoint(p0, p1, p2, t){
+				return	(Math.pow((1 - t), 2) * p0) +
+						(2 * (1 - t) * t * p1)		+
+						(Math.pow(t, 2) * p2);
+			}
+			
+			function quadraticBezier(p0, p1, p2, steps){
+				var t = 1 / steps;
+				var i, Dt = 0;
+				var path = [];
+				
+				for(i = 0; i < steps; i++){
+					
+					Dt += t;
+					path.push({
+							x: calcQuadraticBezierPoint(p0.x, p1.x, p2.x, Dt),
+							y: calcQuadraticBezierPoint(p0.y, p1.y, p2.y, Dt)
+						});
+				}
+				
+				console.warn("Entry points");
+				console.table([p0, p1, p2]);
+				
+				console.log("\n\n");
+				
+				console.warn("Calculated points");
+				console.log("t = " + t);
+				console.table(path);
+				
+				return path;
+			}
+			
+		</script>
+	</body>
+</html>

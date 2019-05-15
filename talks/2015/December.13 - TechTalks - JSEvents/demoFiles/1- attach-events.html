@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<style>
+			body, div {padding: 10px 20px; margin: 0;}
+		</style>
+    </head>
+    <body>
+        
+<pre>
+function handler(){
+	console.log(this);
+}
+</pre>
+
+<strong>Onclick attribute</strong>
+<pre>
+onclick = " handler() ";
+</pre>
+<button type="button" onclick="handler()" id="d1">HTML handler</button>
+<br/><br/>
+<pre>
+onclick = " console.log(this) ";
+</pre>
+<button type="button" onclick="console.log(this)" id="d2">HTML handler - 2</button>
+<br/><br/><br/>
+<strong>addEventListener</strong>
+<pre>
+btnRef.addEventListener('click', handler);
+</pre>
+		<button type="button" id="d3">Event Listener</button>
+		
+        <script src="events.js"></script>
+		<script>
+		
+			var d3 = document.getElementById('d3');
+			
+			function handler(){
+				//console.log(event);
+				console.log(this);
+			}
+			
+			d3.addEventListener('click', handler);
+		
+			var customEvt = new Event('click');
+			//d1.dispatchEvent(customEvt);
+		
+		</script>
+    </body>
+</html>

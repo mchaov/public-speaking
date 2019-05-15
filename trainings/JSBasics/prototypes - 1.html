@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		
+
+		<script>
+		
+				var Foo = (function(){
+					function Foo(){
+						// some code...
+					}
+					Foo.prototype.method = function(){
+						// some code...
+					};
+					return Foo;
+				}());		
+						
+				var baz = Object.assign(
+					{}, 
+					Foo.prototype, 
+					Bar.prototype
+				);
+
+		</script>		
+	</body>
+</html>

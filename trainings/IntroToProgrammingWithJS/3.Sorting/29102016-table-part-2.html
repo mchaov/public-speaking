@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<style>
+			ul {
+				float: left;
+				border: 1px solid #cecece;
+				padding-right: 20px;
+			}
+			table {
+				border: 1px solid #cecece;
+			}
+			table td {
+				border: 1px solid #dedede;
+				padding: 2px 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			/**
+			 * 1. Get content from: http://cn.sbtech.com/sb-test/content.json
+			 * 2. Order by First Name asc
+			 * 3. Generate array with all First Names
+			 * 4. Generate HTML list with the data
+			 *
+			 */
+
+			"use strict";
+
+			/* ALREADY COMMENTED IN PREV EXCERSISE \/ */
+			function insertHTML(parent, html)		{ return parent.innerHTML = html; }
+			function wrapInTag(tag, str)			{ return '<' + tag + '>' + str + '</' + tag + '>'; }
+			function sortASCNumbers(prop, a, b)		{ return a[prop] - b[prop]; };
+			function sortDESCNumbers(prop, a, b)	{ return b[prop] - a[prop]; };
+			function sortASCText(prop, a, b)		{ return a[prop].localeCompare(b[prop]); };
+			function sortDESCText(prop, a, b)		{ return b[prop].localeCompare(a[prop]); };
+
+			function sortJSON(arr, direction, prop) {
+				var type;
+				if (!isNaN(arr[0][prop])) {
+					type = direction === 'asc' ? sortASCNumbers : sortDESCNumbers;
+				} else {
+					type = direction === 'asc' ? sortASCText : sortDESCText;
+				}
+				return arr.slice().sort(type.bind(null, prop));
+			}
+			
+			function getJSONKeys(arr) {
+				var a = [], i, j;
+				for ( i = 0; i < arr.length; i++) {
+					for (j in arr[i]) {
+						if (arr[i].hasOwnProperty(j) && a.indexOf(j) === -1) {
+							a.push(j);
+						}
+					}
+				}
+				return a;
+			}
+			
+			function batchWrapObj(tag, obj, keys) {
+				var k, tmp = '';
+				for ( k = 0; k < keys.length; k++) {
+					tmp += wrapInTag('td', obj[keys[k]] || '');
+				}
+				return tmp;
+			}
+
+			function batchWrapArr(tag, arr) {
+				var i, tmp = '';
+				for ( i = 0; i < arr.length; i++) {
+					tmp += wrapInTag(tag, arr[i]);
+				}
+				return tmp;
+			}
+
+			function getData(url, callback) {
+				var oReq = new XMLHttpRequest();
+				oReq.addEventListener("load", callback);
+				oReq.open("GET", url);
+				oReq.send();
+			}
+
+			
+			function buildTable(keys, data) {
+				var j, rows = '';
+				rows += wrapInTag('tr', batchWrapArr('th', keys));
+				for ( j = 0; j < data.length; j++) {
+					rows += wrapInTag('tr', batchWrapObj('td', data[j], keys));
+				}
+				return wrapInTag('table', rows);
+			}
+
+			/* ALREADY COMMENTED IN PREV EXCERSISE /\ */
+			
+			// get all properties by specific key
+			// json -> Array<Object>
+			// key -> String, key to get all properties with			
+			function getByKey(json, key) {
+				var a = [],	// empty array to return 
+					i;		// iterator
+					
+				for(i = 0; i < json.length; i++) {
+					// if object[key] has a value
+					if(typeof json[i][key] !== 'undefined'){
+						// push it to the array
+						a.push(json[i][key]);
+					}
+				}
+				
+				// return the newly formed array
+				return a;
+			}
+
+			// build HTML list
+			// data -> Array<String>
+			function buildList(data) {
+				// return the result of wrapping multiple values in tags
+				return wrapInTag('ul', batchWrapArr('li', data));
+			}
+
+			function handleResponse(evt) {
+				var data = JSON.parse(evt.currentTarget.response),
+				    keys = getJSONKeys(data),
+				    sorted = sortJSON(data, 'asc', 'First Name'),
+				    
+				    table = buildTable(keys, sorted),
+				    list = '';
+				    
+				    for(var i = 0; i < 6; i++){
+				    	list += buildList(getByKey(sorted, keys[i]));
+				    }
+					
+				return insertHTML(document.body, list + table);
+			}
+
+			getData('http://cn.sbtech.com/sb-test/content.json', handleResponse);
+
+		</script>
+	</body>
+</html>

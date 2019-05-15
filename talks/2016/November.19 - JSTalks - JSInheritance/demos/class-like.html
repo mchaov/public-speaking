@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+	
+		<script>
+			'use strict';
+			
+			var ClassName = (function () {
+				
+				//private/static method/properties
+				var _bar = 'the internal static property';
+				function _foo () {
+					return _bar;
+				}
+				
+				//constructor
+				function ClassName (n) {
+					// private, but NOT STATIC
+					var name = n;
+					var counter = 0;
+					
+					// public API
+					Object.defineProperties(this, {
+						"counter": {
+							enumerable: false,
+							configurable: false,
+							get: function () {
+								return counter;
+							},
+							set: function (x) {
+								return counter = x;
+							}
+						},
+						"name": {
+							writable: false,
+							enumerable: false,
+							configurable: false,
+							value: name
+						},
+						"foo": {
+							writable: false,
+							enumerable: false,
+							configurable: false,
+							value: _foo
+						},
+						"inc": {
+							writable: false,
+							enumerable: false,
+							configurable: false,
+							value: function() { return counter++; } // bind
+						}
+					});
+				}
+				
+				return ClassName; //to turn to singleton -> return new ClassName;
+			}());
+			
+			
+			//instances
+			var a = new ClassName('A');
+			var b = new ClassName('B');
+			var c = new ClassName('C');
+		</script>
+	</body>
+</html>

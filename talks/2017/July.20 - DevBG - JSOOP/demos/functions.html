@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+        function pooper(state) {
+            return {
+                poop: function () {
+                    console.log(state.name, "...");
+                }
+            }
+        }
+
+        function eater(state) {
+            return {
+                eat: function () {
+                    console.log(state.name, "nom nom");
+                }
+            }
+        }
+
+        function barker(state) {
+            return {
+                bark: function () {
+                    console.log(state.name, "bau bau");
+                }
+            }
+        }
+
+        function dog(name) {
+            var state = { name }
+            return Object.assign(
+                {},
+                eater(state),
+                pooper(state),
+                barker(state)
+            )
+        }
+    </script>
+</body>
+
+</html>
