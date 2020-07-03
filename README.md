@@ -25,10 +25,10 @@ List is not exhaustive but I lost some of the files over the years :)
 
 ### 2020
 
-| Date            | Title                                | Conference         | Description                                          |
-| --------------- | ------------------------------------ | ------------------ | ---------------------------------------------------- |
-| 25.July.2020    | The missunderstood abstraction       | SofiaJS workgroup; |                                                      |
-| 20.January.2020 | The Mythical Senior Developer {rev2} | Math.random();     | Growth mindset vs Fixed mindset; Life-long learning. |
+| Date            | Title                                | Conference        | Description                                          |
+| --------------- | ------------------------------------ | ----------------- | ---------------------------------------------------- |
+| 25.July.2020    | The missunderstood abstraction       | SofiaJS workgroup |                                                      |
+| 20.January.2020 | The Mythical Senior Developer {rev2} | Math.random();    | Growth mindset vs Fixed mindset; Life-long learning. |
 
 ### 2019
 
