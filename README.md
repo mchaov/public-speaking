@@ -2,6 +2,7 @@
 
 - [Public Speaking](#public-speaking)
   - [Talks list](#talks-list)
+    - [2021](#2021)
     - [2020](#2020)
     - [2019](#2019)
     - [2018](#2018)
@@ -22,6 +23,12 @@ Feel free to contact me for participation in events.
 List is not exhaustive but I lost some of the files over the years :)
 
 ## Talks list
+
+### 2021
+
+| Date          | Title           | Conference | Description                                                                                              |
+| ------------- | --------------- | ---------- | -------------------------------------------------------------------------------------------------------- |
+| 30.March.2021 | Performance 101 | SofiaJS    | [FB event](https://fb.me/e/4hrWAaTs9), [YouTube video {BG}](https://www.youtube.com/watch?v=jifESmclNAI) |
 
 ### 2020
 
