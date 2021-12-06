@@ -26,12 +26,12 @@ List is not exhaustive but I lost some of the files over the years :)
 
 ### 2021
 
-| Date          | Title             | Conference | Description                                                                                              |
-| ------------- | ----------------- | ---------- | -------------------------------------------------------------------------------------------------------- |
-| 30.March.2021 | Testable software | JSTalks    | Workshop                                                                                                 |
-| 30.March.2021 | Performance 101   | JSTalks    |                                                                                                          |
-| 30.March.2021 | Performance 101   | HackConf   | [YouTube video {EN}](https://www.youtube.com/watch?v=1fRciFbJtdo)                                        |
-| 30.March.2021 | Performance 101   | SofiaJS    | [FB event](https://fb.me/e/4hrWAaTs9), [YouTube video {BG}](https://www.youtube.com/watch?v=jifESmclNAI) |
+| Date             | Title             | Conference | Description                                                                                              |
+| ---------------- | ----------------- | ---------- | -------------------------------------------------------------------------------------------------------- |
+| 20.November.2021 | Performance 101   | JSTalks    | [YouTube video {EN}](https://youtu.be/Sl7sgO0Wc-k?t=3371)                                                |
+| 19.November.2021 | Testable software | JSTalks    | Workshop                                                                                                 |
+| 30.March.2021    | Performance 101   | HackConf   | [YouTube video {EN}](https://www.youtube.com/watch?v=1fRciFbJtdo)                                        |
+| 30.March.2021    | Performance 101   | SofiaJS    | [FB event](https://fb.me/e/4hrWAaTs9), [YouTube video {BG}](https://www.youtube.com/watch?v=jifESmclNAI) |
 
 ### 2020
 
