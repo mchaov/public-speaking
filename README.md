@@ -35,12 +35,13 @@ List is not exhaustive but I lost some of the files over the years :)
 
 ### 2020
 
-| Date             | Title                                 | Conference        | Description                                                                                                                |
-| ---------------- | ------------------------------------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| 23.November.2020 | Abstraction 101                       | JSTalks           | Lightning talk                                                                                                             |
-| 22.October.2020  | Public interview for Sr. JS Developer | Math.Random();    | [FB event](https://www.facebook.com/events/290563375599757/), [YouTube video](https://www.youtube.com/watch?v=imqV1_c-sqE) |
-| 25.July.2020     | The missunderstood abstraction        | SofiaJS workgroup |                                                                                                                            |
-| 20.January.2020  | The Mythical Senior Developer {rev2}  | Math.random();    | Growth mindset vs Fixed mindset; Life-long learning.                                                                       |
+| Date                 | Title                                  | Conference          | Description                                                                                                                |
+| -------------------- | -------------------------------------- | ------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| 23.November.2020     | Abstraction 101                        | JSTalks             | Lightning talk                                                                                                             |
+| 22.October.2020      | Public interview for Sr. JS Developer  | Math.Random();      | [FB event](https://www.facebook.com/events/290563375599757/), [YouTube video](https://www.youtube.com/watch?v=imqV1_c-sqE) |
+| 15-16.September.2020 | Integrating React into legacy projects | Geekle React Global | [YouTube video](https://www.youtube.com/watch?v=s6Ws0e_6nwA)                                                               |
+| 25.July.2020         | The missunderstood abstraction         | SofiaJS workgroup   |                                                                                                                            |
+| 20.January.2020      | The Mythical Senior Developer {rev2}   | Math.random();      | Growth mindset vs Fixed mindset; Life-long learning.                                                                       |
 
 ### 2019
 
