@@ -2,6 +2,7 @@
 
 - [Public Speaking](#public-speaking)
   - [Talks list](#talks-list)
+    - [2022](#2022)
     - [2021](#2021)
     - [2020](#2020)
     - [2019](#2019)
@@ -23,6 +24,13 @@ Feel free to contact me for participation in events.
 List is not exhaustive but I lost some of the files over the years :)
 
 ## Talks list
+
+### 2022
+
+| Date              | Title                    | Conference           | Description |
+| ----------------- | ------------------------ | -------------------- | ----------- |
+| 10.September.2022 | So, you think you do QA? | QA:ChallengeAccepted |             |
+
 
 ### 2021
 
