@@ -27,9 +27,9 @@ List is not exhaustive but I lost some of the files over the years :)
 
 ### 2022
 
-| Date              | Title                    | Conference           | Description |
-| ----------------- | ------------------------ | -------------------- | ----------- |
-| 10.September.2022 | So, you think you do QA? | QA:ChallengeAccepted |             |
+| Date              | Title                    | Conference           | Description                                              |
+| ----------------- | ------------------------ | -------------------- | -------------------------------------------------------- |
+| 10.September.2022 | So, you think you do QA? | QA:ChallengeAccepted | Keynote presentation focused on delivering with quality. |
 
 
 ### 2021
