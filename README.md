@@ -29,6 +29,7 @@ List is not exhaustive but I lost some of the files over the years :)
 
 | Date              | Title                    | Conference           | Description                                              |
 | ----------------- | ------------------------ | -------------------- | -------------------------------------------------------- |
+| 13.October.2022   | So, you think you do QA? | Drive-in Conf        | Presentation focused on delivering with quality.         |
 | 10.September.2022 | So, you think you do QA? | QA:ChallengeAccepted | Keynote presentation focused on delivering with quality. |
 
 
