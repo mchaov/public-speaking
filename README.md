@@ -1,7 +1,9 @@
 # Public Speaking
 
 - [Public Speaking](#public-speaking)
-  - [Talks list](#talks-list)
+  - [Talks/Workshops/Articles/Courses list](#talksworkshopsarticlescourses-list)
+    - [2024](#2024)
+    - [2023](#2023)
     - [2022](#2022)
     - [2021](#2021)
     - [2020](#2020)
@@ -23,14 +25,30 @@ Feel free to contact me for participation in events.
 
 List is not exhaustive but I lost some of the files over the years :)
 
-## Talks list
+## Talks/Workshops/Articles/Courses list
+
+### 2024
+
+| Date            | Title                               | Conference                            | Description |
+| --------------- | ----------------------------------- | ------------------------------------- | ----------- |
+| Summer Semester | Course: Troubleshooting performance | Sofia University St. Kliment Ohridski | TBD         |
+
+### 2023
+
+| Date | Title              | Conference                            | Description |
+| ---- | ------------------ | ------------------------------------- | ----------- |
+| TBD  | Architecture topic | DEV.BG group                          | TBD         |
+| TBD  | Project management | Sofia University St. Kliment Ohridski | TBD         |
 
 ### 2022
 
-| Date              | Title                    | Conference           | Description                                              |
-| ----------------- | ------------------------ | -------------------- | -------------------------------------------------------- |
-| 13.October.2022   | So, you think you do QA? | Drive-in Conf        | Presentation focused on delivering with quality.         |
-| 10.September.2022 | So, you think you do QA? | QA:ChallengeAccepted | Keynote presentation focused on delivering with quality. |
+| Date              | Title                                                  | Conference           | Description                                                                                               |
+| ----------------- | ------------------------------------------------------ | -------------------- | --------------------------------------------------------------------------------------------------------- |
+| 12.November.2022  | Lessons Learned: WebSockets                            | JSTalks              | [Details](https://sessionize.com/s/martin-chaov/lessons-learned-websockets/57205)                         |
+| 11.November.2022  | Designing software with volatility based decomposition | JSTalks Workshop     | [Details](https://sessionize.com/s/martin-chaov/workshop-designing-software-with-volatility-based-/57206) |
+| 13.October.2022   | So, you think you do QA?                               | Drive-in Conf        | Presentation focused on delivering with quality.                                                          |
+| 10.September.2022 | So, you think you do QA?                               | QA:ChallengeAccepted | Keynote presentation focused on delivering with quality.                                                  |
+| 06.July.2022      | Performance 101 - Article                              | N/A                  | [Article in medium](https://medium.com/p/4def30e77c47)                                                    |
 
 
 ### 2021
