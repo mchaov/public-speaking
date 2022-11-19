@@ -48,7 +48,7 @@ List is not exhaustive but I lost some of the files over the years :)
 | 11.November.2022  | Designing software with volatility based decomposition | JSTalks Workshop     | [Details](https://sessionize.com/s/martin-chaov/workshop-designing-software-with-volatility-based-/57206) |
 | 13.October.2022   | So, you think you do QA?                               | Drive-in Conf        | Presentation focused on delivering with quality.                                                          |
 | 10.September.2022 | So, you think you do QA?                               | QA:ChallengeAccepted | Keynote presentation focused on delivering with quality.                                                  |
-| 06.July.2022      | Performance 101 - Article                              | N/A                  | [Article in medium](https://medium.com/p/4def30e77c47)                                                    |
+| 06.July.2022      | Performance 101 - Article                              | N/A                  | [Article in medium.com](https://medium.com/p/4def30e77c47)                                                |
 
 
 ### 2021
