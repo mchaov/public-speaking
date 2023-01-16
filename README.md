@@ -35,10 +35,9 @@ List is not exhaustive I lost some of the files over the years :)
 
 ### 2023
 
-| Date | Title              | Conference                            | Description |
-| ---- | ------------------ | ------------------------------------- | ----------- |
-| TBD  | Architecture topic | DEV.BG group                          | TBD         |
-| TBD  | Project management | Sofia University St. Kliment Ohridski | TBD         |
+| Date            | Title                                       | Conference   | Description                                                                |
+| --------------- | ------------------------------------------- | ------------ | -------------------------------------------------------------------------- |
+| 16.January.2023 | So, you think you do software architecture? | DEV.BG group | [Details](https://dev.bg/event/so-you-think-you-do-software-architecture/) |
 
 ### 2022
 
@@ -49,7 +48,6 @@ List is not exhaustive I lost some of the files over the years :)
 | 13.October.2022   | So, you think you do QA?                               | Drive-in Conf        | Presentation focused on delivering with quality.                                                          |
 | 10.September.2022 | So, you think you do QA?                               | QA:ChallengeAccepted | Keynote presentation focused on delivering with quality.                                                  |
 | 06.July.2022      | Performance 101 - Article                              | N/A                  | [Article in medium.com](https://medium.com/p/4def30e77c47)                                                |
-
 
 ### 2021
 
