@@ -35,9 +35,11 @@ List is not exhaustive I lost some of the files over the years :)
 
 ### 2023
 
-| Date            | Title                                       | Conference   | Description                                                                |
-| --------------- | ------------------------------------------- | ------------ | -------------------------------------------------------------------------- |
-| 16.January.2023 | So, you think you do software architecture? | DEV.BG group | [Details](https://dev.bg/event/so-you-think-you-do-software-architecture/) |
+| Date             | Title                                       | Conference                                   | Description                                                                |
+| ---------------- | ------------------------------------------- | -------------------------------------------- | -------------------------------------------------------------------------- |
+| 29.March.2023    | TBD                                         | JS Experts                                   |                                                                            |
+| 25.February.2023 | Excel automate (TS) + Power Automate demos  | Global Power Platform Bootcamp Bulgaria 2023 |                                                                            |
+| 16.January.2023  | So, you think you do software architecture? | DEV.BG group                                 | [Details](https://dev.bg/event/so-you-think-you-do-software-architecture/) |
 
 ### 2022
 
