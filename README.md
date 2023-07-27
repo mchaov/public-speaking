@@ -29,14 +29,16 @@ List is not exhaustive I lost some of the files over the years :)
 
 ### 2024
 
-| Date            | Title                               | Conference                            | Description |
-| --------------- | ----------------------------------- | ------------------------------------- | ----------- |
-| Summer Semester | Course: Troubleshooting performance | Sofia University St. Kliment Ohridski | TBD         |
+| Date            | Title                                     | Conference                            | Description |
+| --------------- | ----------------------------------------- | ------------------------------------- | ----------- |
+| Summer Semester | Course: Troubleshooting performance (HPC) | Sofia University St. Kliment Ohridski | TBD         |
 
 ### 2023
 
 | Date             | Title                                       | Conference                                   | Description                                                                              |
 | ---------------- | ------------------------------------------- | -------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| TBD              | TBD                                         | JSTalks                                      | TBD                                                                                      |
+| 27.July.2023     | Excel + TypeScript                          | BeerJS Summit 2023                           | [Details](https://www.facebook.com/events/3383835178536918/)                             |
 | 04.May.2023      | A day in the life of an architect           | University St. Kliment Ohridski, Sofia, BG   | [Details](https://sessionize.com/s/martin-chaov/a-day-in-the-life-of-an-architect/69768) |
 | 30.March.2023    | Small optimizations for critical decisions  | BeerJS                                       | [FB Event](https://fb.me/e/3x6bHjMet)                                                    |
 | 25.February.2023 | Excel automate (TS) + Power Automate demos  | Global Power Platform Bootcamp Bulgaria 2023 |                                                                                          |
