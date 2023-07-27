@@ -106,9 +106,9 @@ List is not exhaustive I lost some of the files over the years :)
 | 18.November.2017 | SSE                                   | JSTalks                   |             |
 | 29.August.2017   | Career Orientation                    | Guest Lecturer at SoftUni |             |
 | 23.August.2017   | FrontEnd For Large Scale Applications | TechTalks                 |             |
-| 17.August.2016   | FrontEnd For Large Scale Applications | SBTalks                   |             |
+| 17.August.2017   | FrontEnd For Large Scale Applications | SBTalks                   |             |
 | 20.July.2017     | JS OOP                                | DevBG                     |             |
-| 24.April.2016    | Animations In The Browser             | BeerJS                    |             |
+| 24.April.2017    | Animations In The Browser             | BeerJS                    |             |
 | 17.April.2017    | Career Orientation                    | Guest Lecturer at SoftUni |             |
 
 ### 2016
