@@ -35,14 +35,16 @@ List is not exhaustive I lost some of the files over the years :)
 
 ### 2023
 
-| Date             | Title                                       | Conference                                   | Description                                                                              |
-| ---------------- | ------------------------------------------- | -------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| TBD              | TBD                                         | JSTalks                                      | TBD                                                                                      |
-| 27.July.2023     | Excel + TypeScript                          | BeerJS Summit 2023                           | [Details](https://www.facebook.com/events/3383835178536918/)                             |
-| 04.May.2023      | A day in the life of an architect           | University St. Kliment Ohridski, Sofia, BG   | [Details](https://sessionize.com/s/martin-chaov/a-day-in-the-life-of-an-architect/69768) |
-| 30.March.2023    | Small optimizations for critical decisions  | BeerJS                                       | [FB Event](https://fb.me/e/3x6bHjMet)                                                    |
-| 25.February.2023 | Excel automate (TS) + Power Automate demos  | Global Power Platform Bootcamp Bulgaria 2023 |                                                                                          |
-| 16.January.2023  | So, you think you do software architecture? | DEV.BG group                                 | [Details](https://dev.bg/event/so-you-think-you-do-software-architecture/)               |
+| Date             | Title                                        | Conference                                   | Description                                                                              |
+| ---------------- | -------------------------------------------- | -------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| TBD              | Lecture: TBD                                 | JSTalks                                      | TBD                                                                                      |
+| TBD              | Workshop: TBD                                | JSTalks                                      | TBD                                                                                      |
+| 07.October.2023  | Workshop: A day in the life of the architect | Organized by Draftkings                      | TBD                                                                                      |
+| 27.July.2023     | Excel + TypeScript                           | BeerJS Summit 2023                           | [Details](https://www.facebook.com/events/3383835178536918/)                             |
+| 04.May.2023      | A day in the life of an architect            | University St. Kliment Ohridski, Sofia, BG   | [Details](https://sessionize.com/s/martin-chaov/a-day-in-the-life-of-an-architect/69768) |
+| 30.March.2023    | Small optimizations for critical decisions   | BeerJS                                       | [FB Event](https://fb.me/e/3x6bHjMet)                                                    |
+| 25.February.2023 | Excel automate (TS) + Power Automate demos   | Global Power Platform Bootcamp Bulgaria 2023 |                                                                                          |
+| 16.January.2023  | So, you think you do software architecture?  | DEV.BG group                                 | [Details](https://dev.bg/event/so-you-think-you-do-software-architecture/)               |
 
 ### 2022
 
