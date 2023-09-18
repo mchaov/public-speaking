@@ -2,7 +2,7 @@
 
 - [Public Speaking](#public-speaking)
   - [Talks/Workshops/Articles/Courses list](#talksworkshopsarticlescourses-list)
-    - [2024Ф](#2024ф)
+    - [2024](#2024)
     - [2023](#2023)
     - [2022](#2022)
     - [2021](#2021)
@@ -27,7 +27,7 @@ List is not exhaustive I lost some of the files over the years :)
 
 ## Talks/Workshops/Articles/Courses list
 
-### 2024Ф
+### 2024
 
 | Date            | Title                                     | Conference                            | Description |
 | --------------- | ----------------------------------------- | ------------------------------------- | ----------- |
