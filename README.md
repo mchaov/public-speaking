@@ -2,7 +2,7 @@
 
 - [Public Speaking](#public-speaking)
   - [Talks/Workshops/Articles/Courses list](#talksworkshopsarticlescourses-list)
-    - [2024](#2024)
+    - [2024Ф](#2024ф)
     - [2023](#2023)
     - [2022](#2022)
     - [2021](#2021)
@@ -27,7 +27,7 @@ List is not exhaustive I lost some of the files over the years :)
 
 ## Talks/Workshops/Articles/Courses list
 
-### 2024
+### 2024Ф
 
 | Date            | Title                                     | Conference                            | Description |
 | --------------- | ----------------------------------------- | ------------------------------------- | ----------- |
@@ -40,6 +40,7 @@ List is not exhaustive I lost some of the files over the years :)
 | TBD              | Lecture: TBD                                 | JSTalks                                      | TBD                                                                                      |
 | TBD              | Workshop: TBD                                | JSTalks                                      | TBD                                                                                      |
 | 07.October.2023  | Workshop: A day in the life of the architect | Organized by Draftkings                      | TBD                                                                                      |
+| 04.October.2023  | Github Copilot vs Reality                    | Drive-in Conf                                | [Details](https://sessionize.com/s/martin-chaov/github-copilot-vs-reality/77272)         |
 | 27.July.2023     | Excel + TypeScript                           | BeerJS Summit 2023                           | [Details](https://www.facebook.com/events/3383835178536918/)                             |
 | 04.May.2023      | A day in the life of an architect            | University St. Kliment Ohridski, Sofia, BG   | [Details](https://sessionize.com/s/martin-chaov/a-day-in-the-life-of-an-architect/69768) |
 | 30.March.2023    | Small optimizations for critical decisions   | BeerJS                                       | [FB Event](https://fb.me/e/3x6bHjMet)                                                    |
