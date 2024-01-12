@@ -29,9 +29,10 @@ List is not exhaustive I lost some of the files over the years :)
 
 ### 2024
 
-| Date            | Title                                     | Conference                            | Description |
-| --------------- | ----------------------------------------- | ------------------------------------- | ----------- |
-| Summer Semester | Course: Troubleshooting performance (HPC) | Sofia University St. Kliment Ohridski | TBD         |
+| Date            | Title                                                      | Conference                            | Description                                                                                                      |
+| --------------- | ---------------------------------------------------------- | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| 31.January.2024 | The hidden reality of software economics: Demystifying TCO | DevBG Architecture Group              | [Details](https://dev.bg/event/software-architecture-the-hidden-reality-of-software-economics-demystifying-tco/) |
+| Summer Semester | Course: Troubleshooting performance (HPC)                  | Sofia University St. Kliment Ohridski | TBD                                                                                                              |
 
 ### 2023
 
