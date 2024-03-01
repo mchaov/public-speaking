@@ -29,10 +29,11 @@ List is not exhaustive I lost some of the files over the years :)
 
 ### 2024
 
-| Date            | Title                                                      | Conference                            | Description                                                                                                      |
-| --------------- | ---------------------------------------------------------- | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| 31.January.2024 | The hidden reality of software economics: Demystifying TCO | DevBG Architecture Group              | [Details](https://dev.bg/event/software-architecture-the-hidden-reality-of-software-economics-demystifying-tco/) |
-| Summer Semester | Course: Troubleshooting performance (HPC)                  | Sofia University St. Kliment Ohridski | TBD                                                                                                              |
+| Date             | Title                                                      | Conference                            | Description                                                                                                      |
+| ---------------- | ---------------------------------------------------------- | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| 29.February.2025 | GitHub Copilot vs Reality                                  | BeerJS                                | [Details](https://www.facebook.com/events/1088834028828102)                                                      |
+| 31.January.2024  | The hidden reality of software economics: Demystifying TCO | DevBG Architecture Group              | [Details](https://dev.bg/event/software-architecture-the-hidden-reality-of-software-economics-demystifying-tco/) |
+| Summer Semester  | Course: Troubleshooting performance (HPC)                  | Sofia University St. Kliment Ohridski | Course for 3+ year students in SU                                                                                |
 
 ### 2023
 
