@@ -31,7 +31,13 @@ List is not exhaustive I lost some of the files over the years :)
 
 | Date             | Title                                                      | Conference                            | Description                                                                                                      |
 | ---------------- | ---------------------------------------------------------- | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| 29.February.2025 | GitHub Copilot vs Reality                                  | BeerJS                                | [Details](https://www.facebook.com/events/1088834028828102)                                                      |
+| 23.November.2024 | TBD                                                        | JSTalks                               | TBD                                                                                                              |
+| 22.November.2024 | TBD                                                        | JSTalks                               | TBD                                                                                                              |
+| TBD              | Talk                                                       | TBD                                   | TBD                                                                                                              |
+| TBD              | Workshop                                                   | TBD                                   | TBD                                                                                                              |
+| 22.August.2024   | The price of clean code                                    | DEV.BG All in ONE 2.0                 | https://2024.dev.bg/                                                                                             |
+| 23.July.2024     | TBD                                                        | BeerJS                                | [Details](https://www.facebook.com/events/345882071627705)                                                       |
+| 29.February.2024 | GitHub Copilot vs Reality                                  | BeerJS                                | [Details](https://www.facebook.com/events/1088834028828102)                                                      |
 | 31.January.2024  | The hidden reality of software economics: Demystifying TCO | DevBG Architecture Group              | [Details](https://dev.bg/event/software-architecture-the-hidden-reality-of-software-economics-demystifying-tco/) |
 | Summer Semester  | Course: Troubleshooting performance (HPC)                  | Sofia University St. Kliment Ohridski | Course for 3+ year students in SU                                                                                |
 
