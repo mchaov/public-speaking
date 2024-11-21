@@ -29,17 +29,17 @@ List is not exhaustive I lost some of the files over the years :)
 
 ### 2024
 
-| Date             | Title                                                      | Conference                            | Description                                                                                                      |
-| ---------------- | ---------------------------------------------------------- | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| 23.November.2024 | TBD                                                        | JSTalks                               | TBD                                                                                                              |
-| 22.November.2024 | TBD                                                        | JSTalks                               | TBD                                                                                                              |
-| TBD              | Talk                                                       | TBD                                   | TBD                                                                                                              |
-| TBD              | Workshop                                                   | TBD                                   | TBD                                                                                                              |
-| 22.August.2024   | The price of clean code                                    | DEV.BG All in ONE 2.0                 | [Details](https://2024.dev.bg/)                                                                                  |
-| 23.July.2024     | TBD                                                        | BeerJS                                | [Details](https://www.facebook.com/events/345882071627705)                                                       |
-| 29.February.2024 | GitHub Copilot vs Reality                                  | BeerJS                                | [Details](https://www.facebook.com/events/1088834028828102)                                                      |
-| 31.January.2024  | The hidden reality of software economics: Demystifying TCO | DevBG Architecture Group              | [Details](https://dev.bg/event/software-architecture-the-hidden-reality-of-software-economics-demystifying-tco/) |
-| Summer Semester  | Course: Troubleshooting performance (HPC)                  | Sofia University St. Kliment Ohridski | Course for 3+ year students in SU                                                                                |
+| Date              | Title                                                                     | Conference                            | Description                                                                                                      |
+| ----------------- | ------------------------------------------------------------------------- | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| 23.November.2024  | GitHub Copilot vs Reality Vol.2                                           | JSTalks                               | TBD                                                                                                              |
+| 22.November.2024  | [WORKSHOP] Designing software with volatility based decomposition Vol 2.0 | JSTalks                               | TBD                                                                                                              |
+| 29.September.2024 | Mastering Feature Flags: A Guide to Controlled Rollouts                   | {DEV}ChallengeAccepted                | [Details](https://challengeaccepted.dev/)                                                                        |
+| 27.September.2024 | [WORKSHOP] Think Like a Software Architect: Live Problem-Solving Workshop | {DEV}ChallengeAccepted                | [Details](https://challengeaccepted.dev/)                                                                        |
+| 22.August.2024    | The price of clean code                                                   | DEV.BG All in ONE 2.0                 | [Details](https://2024.dev.bg/) [YouTube](https://www.youtube.com/watch?v=XmII3_qk2nE)                           |
+| 23.July.2024      | AI Overload                                                               | BeerJS                                | [Details](https://www.facebook.com/events/345882071627705)                                                       |
+| 29.February.2024  | GitHub Copilot vs Reality                                                 | BeerJS                                | [Details](https://www.facebook.com/events/1088834028828102)                                                      |
+| 31.January.2024   | The hidden reality of software economics: Demystifying TCO                | DevBG Architecture Group              | [Details](https://dev.bg/event/software-architecture-the-hidden-reality-of-software-economics-demystifying-tco/) |
+| Summer Semester   | Course: Troubleshooting performance (HPC)                                 | Sofia University St. Kliment Ohridski | Course for 3+ year students in SU                                                                                |
 
 ### 2023
 
